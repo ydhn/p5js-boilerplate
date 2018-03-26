@@ -1,0 +1,26 @@
+{
+  "plugins": [
+    "@babel/transform-runtime",
+    "transform-optional-chaining"
+  ],
+  "presets": [
+    [
+      "@babel/es2015",
+      {
+        "loose": true,
+        "modules": false
+      }
+    ],
+    "@babel/preset-stage-0",
+    "@babel/preset-stage-1",
+    "@babel/preset-stage-2",
+    "@babel/preset-stage-3"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "@babel/es2015"
+      ]
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "name": "p5.js-es6-babel-sass-webpack-boilerplate",
+  "name": "p5js-boilerplate",
   "version": "1.0.0",
-  "description": "Boilerplate for writing p5.js sketches in es6 with babel, webpack and sass.",
+  "description": "Boilerplate for P5.JS + ES6(with Optional Chaining)",
   "scripts": {
     "clean": "rimraf dist",
     "dev": "webpack-dev-server --progress --colors --inline --hot --open",
@@ -10,28 +10,39 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:mkontogiannis/p5.js-es6-babel-sass-webpack-boilerplate.git"
+    "url": "git@github.com:ydhn/react-boilerplate.git"
   },
-  "author": "Michael Kontogiannis <mike@kontogiannis.io> (http://m.kontogiannis.io/)",
+  "author": "Yundo Han",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mkontogiannis/p5.js-es6-boilerplate/issues"
+    "url": "https://github.com/ydhn/react-boilerplate/issues"
   },
-  "homepage": "https://github.com/mkontogiannis/p5.js-es6-boilerplate#README",
+  "homepage": "https://github.com/ydhn/react-boilerplate#README",
   "dependencies": {
-    "p5": "0.5.14"
+    "p5": "^0.6.0"
   },
   "devDependencies": {
-    "babel-core": "6.26.0",
-    "babel-loader": "7.1.2",
-    "babel-preset-env": "1.6.0",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/node": "^7.0.0-beta.40",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.40",
+    "@babel/polyfill": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-es2015": "^7.0.0-beta.40",
+    "@babel/preset-react": "^7.0.0-beta.40",
+    "@babel/preset-stage-0": "^7.0.0-beta.40",
+    "@babel/preset-stage-1": "^7.0.0-beta.40",
+    "@babel/preset-stage-2": "^7.0.0-beta.40",
+    "@babel/preset-stage-3": "^7.0.0-beta.40",
+    "@babel/runtime": "^7.0.0-beta.40",
+    "babel-loader": "^8.0.0-beta.0",
+    "babel-plugin-transform-optional-chaining": "^7.0.0-beta.3",
     "copy-webpack-plugin": "4.1.0",
     "css-loader": "0.28.7",
     "node-sass": "4.5.3",
     "rimraf": "2.6.2",
     "sass-loader": "6.0.6",
     "style-loader": "0.18.2",
-    "webpack": "3.6.0",
-    "webpack-dev-server": "2.9.1"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
   }
 }
