@@ -1,7 +1,7 @@
 {
   "name": "p5js-boilerplate",
   "version": "1.0.0",
-  "description": "Boilerplate for P5.JS + ES6(with Optional Chaining)",
+  "description": "Boilerplate for P5.JS + ES6(with Optional Chaining) + Box2d",
   "scripts": {
     "clean": "rimraf dist",
     "dev": "webpack-dev-server --progress --colors --inline --hot --open",

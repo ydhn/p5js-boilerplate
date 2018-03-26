@@ -1,6 +1,7 @@
 # p5.js boilerplate
 
-Boilerplate for writing p5.js sketches in es6 with babel, webpack and sass.
+Boilerplate for writing p5.js sketches in es6 with babel, webpack and sass.<br />
+You can use box2d library as default, if you don't want, just remove require statement in `sketch.js`.
 
 ## Usage
 Cd into the directory and install the dependencies:<br />
