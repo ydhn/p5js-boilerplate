@@ -1,6 +1,6 @@
 var scaleFactor;
 
-var scaleToWorld = function (a, b) {
+window.scaleToWorld = function (a, b) {
   if (a instanceof box2d.b2Vec2) {
     var newv = new box2d.b2Vec2();
     newv.x = (a.x) / scaleFactor;
@@ -16,7 +16,7 @@ var scaleToWorld = function (a, b) {
   }
 };
 
-var scaleToPixels = function (a, b) {
+window.scaleToPixels = function (a, b) {
   if (a instanceof box2d.b2Vec2) {
     var newv = new box2d.b2Vec2();
     newv.x = a.x * scaleFactor;
@@ -36,7 +36,7 @@ var scaleToPixels = function (a, b) {
 // Create Methods
 // -----------------------------------------------------------------------------
 
-var createWorld = function () {
+window.createWorld = function () {
 
   var worldAABB = new box2d.b2AABB();
   worldAABB.lowerBound.SetXY(-this.bounds, -this.bounds);
@@ -53,7 +53,7 @@ var createWorld = function () {
 // Draw Methods
 // -----------------------------------------------------------------------------
 
-var debugDraw = function (canvas, scale, world) {
+window.debugDraw = function (canvas, scale, world) {
 
   var context = canvas.getContext('2d');
   context.fillStyle = '#DDD';
@@ -76,7 +76,7 @@ var debugDraw = function (canvas, scale, world) {
   }
 };
 
-var drawJoint = function (context, scale, world, joint) {
+window.drawJoint = function (context, scale, world, joint) {
   context.save();
   context.scale(scale, scale);
   context.lineWidth /= scale;
@@ -116,7 +116,7 @@ var drawJoint = function (context, scale, world, joint) {
   context.restore();
 };
 
-var drawShape = function (context, scale, world, body, fixture) {
+window.drawShape = function (context, scale, world, body, fixture) {
 
   context.save();
   context.scale(scale, scale);

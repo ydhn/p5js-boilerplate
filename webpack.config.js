@@ -3,13 +3,15 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isProd = process.argv.indexOf('-p') !== -1;
 
-let pluginList = [];
+let pluginList = [
+	new CopyWebpackPlugin([
+		{ from: 'src/index.html', to: 'index.html' },
+		{ from: 'src/assets', to: 'assets' }
+	])
+];
+
 if (isProd) {
 	const prodPlugins = [
-		new CopyWebpackPlugin([
-			{ from: 'src/index.html', to: 'index.html' },
-			{ from: 'src/assets', to: 'assets' }
-		]),
 		new webpack.optimize.UglifyJsPlugin({
 			sourceMap: true,
 			compress: {
@@ -40,6 +42,8 @@ module.exports = {
 	devtool: "source-map",
 	entry: {
 		main: ['@babel/polyfill',
+			__dirname + '/src/js/box2d.js',
+			__dirname + '/src/js/box2d-helper.js',
 			__dirname + '/src/js/sketch.js'],
 		//vendor: vendorList
 	},
