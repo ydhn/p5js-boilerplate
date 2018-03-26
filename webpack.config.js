@@ -30,6 +30,9 @@ module.exports = {
 			}
 		]
 	},
+	resolve: {
+		extensions: ['.js']
+	},
 	plugins: [
     new CopyWebpackPlugin([
       { from: 'src/index.html', to: 'index.html' },
