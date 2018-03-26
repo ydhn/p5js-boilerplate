@@ -1,6 +1,9 @@
 import p5 from 'p5';
 import '../css/style.scss';
 
+require('./box2d')
+require('./box2d-helper')
+
 const sketch = p => {
   let canvas;
   let logo;

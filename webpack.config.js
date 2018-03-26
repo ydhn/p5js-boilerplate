@@ -1,9 +1,48 @@
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const isProd = process.argv.indexOf('-p') !== -1;
+
+let pluginList = [];
+if (isProd) {
+	const prodPlugins = [
+		new CopyWebpackPlugin([
+			{ from: 'src/index.html', to: 'index.html' },
+			{ from: 'src/assets', to: 'assets' }
+		]),
+		new webpack.optimize.UglifyJsPlugin({
+			sourceMap: true,
+			compress: {
+				warnings: false,
+				screw_ie8: true,
+				conditionals: true,
+				unused: true,
+				comparisons: true,
+				sequences: true,
+				dead_code: true,
+				evaluate: true,
+				if_return: true,
+				join_vars: true
+			},
+			output: {
+				comments: false
+			}
+		}),
+		new webpack.LoaderOptionsPlugin({
+			minimize: true,
+			debug: false
+		})
+	];
+	pluginList = pluginList.concat(prodPlugins);
+}
+
 module.exports = {
-	devtool: "inline-sourcemap",
-	entry: __dirname + '/src/js/sketch.js',
+	devtool: "source-map",
+	entry: {
+		main: ['@babel/polyfill',
+			__dirname + '/src/js/sketch.js'],
+		//vendor: vendorList
+	},
 	output: {
 		path: __dirname + '/dist/',
 		publicPath: '/',
@@ -19,10 +58,7 @@ module.exports = {
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				loader: 'babel-loader',
-				query: {
-					presets: ['env']
-				}
+				loader: 'babel-loader'
 			},
 			{
 				test: /\.scss$/,
@@ -33,10 +69,5 @@ module.exports = {
 	resolve: {
 		extensions: ['.js']
 	},
-	plugins: [
-    new CopyWebpackPlugin([
-      { from: 'src/index.html', to: 'index.html' },
-      { from: 'src/assets', to: 'assets' }
-    ])
-  ]
+	plugins: pluginList
 }
