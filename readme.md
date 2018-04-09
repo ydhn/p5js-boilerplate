@@ -18,9 +18,9 @@ cd Desktop\p5js-boilerplate
 ```bash
 npm install
 ```
-- Webserver를 실행합니다.
+- Web Server를 실행합니다.
 ```bash
-`npm run dev`
+npm run dev
 ```
 - Use the following command when done to build the bundled minified result under the `/dist` folder:
 ```bash
