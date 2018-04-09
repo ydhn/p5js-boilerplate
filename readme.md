@@ -22,5 +22,7 @@ npm install
 ```bash
 `npm run dev`
 ```
-- Use the following command when done to build the bundled minified result under the `/dist` folder:<br />
-`npm run build`
+- Use the following command when done to build the bundled minified result under the `/dist` folder:
+```bash
+npm run build
+```
