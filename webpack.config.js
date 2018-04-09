@@ -6,7 +6,8 @@ const isProd = process.argv.indexOf('-p') !== -1;
 let pluginList = [
 	new CopyWebpackPlugin([
 		{ from: 'src/index.html', to: 'index.html' },
-		{ from: 'src/assets', to: 'assets' }
+		{ from: 'src/assets', to: 'assets' },
+		{ from: 'src/js', to: 'js' }
 	])
 ];
 
@@ -42,15 +43,13 @@ module.exports = {
 	devtool: "source-map",
 	entry: {
 		main: ['@babel/polyfill',
-			__dirname + '/src/js/box2d.js',
-			__dirname + '/src/js/box2d-helper.js',
 			__dirname + '/src/js/sketch.js'],
 		//vendor: vendorList
 	},
 	output: {
 		path: __dirname + '/dist/',
 		publicPath: '/',
-		filename: 'js/sketch.js'
+		filename: 'js/app.js'
 	},
 	devServer: {
 		inline: true,
@@ -59,11 +58,6 @@ module.exports = {
 	},
 	module: {
 		loaders: [
-			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				loader: 'babel-loader'
-			},
 			{
 				test: /\.scss$/,
 				loader: "style-loader!css-loader!sass-loader"
