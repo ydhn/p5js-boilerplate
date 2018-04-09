@@ -1,7 +1,7 @@
 {
   "plugins": [
     "@babel/transform-runtime",
-    "transform-optional-chaining"
+    "@babel/plugin-proposal-optional-chaining"
   ],
   "presets": [
     [

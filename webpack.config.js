@@ -43,8 +43,7 @@ module.exports = {
 	devtool: "source-map",
 	entry: {
 		main: ['@babel/polyfill',
-			__dirname + '/src/js/sketch.js'],
-		//vendor: vendorList
+			__dirname + '/src/js/app.js'],
 	},
 	output: {
 		path: __dirname + '/dist/',
