@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:ydhn/react-boilerplate.git"
+    "url": "git@github.com:ydhn/p5js-boilerplate.git"
   },
   "author": "Yundo Han",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ydhn/react-boilerplate/issues"
+    "url": "https://github.com/ydhn/p5js-boilerplate/issues"
   },
-  "homepage": "https://github.com/ydhn/react-boilerplate#README",
+  "homepage": "https://github.com/ydhn/p5js-boilerplate#README",
   "dependencies": {
     "p5": "^0.6.0"
   },

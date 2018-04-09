@@ -14,15 +14,15 @@ cd %userprofile%
 cd Desktop\p5js-boilerplate
 ```
 터미널 (혹은 명령 프롬프트) 에서 소스코드 디렉토리로 왔다면 아래는 PC/Mac 상관없이 동일합니다.
-- Dependency를 설치합니다.
+1. Dependency를 설치합니다.
 ```bash
 npm install
 ```
-- Web Server를 실행합니다.
+2. Web Server를 실행합니다.
 ```bash
 npm run dev
 ```
-- Use the following command when done to build the bundled minified result under the `/dist` folder:
+3. Use the following command when done to build the bundled minified result under the `/dist` folder:
 ```bash
 npm run build
 ```
